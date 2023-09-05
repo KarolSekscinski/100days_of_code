@@ -1,27 +1,34 @@
-ACCOUNT_SID = "ACb62dd2ce2e146d0dbd6b55d1bd204376"
-AUTH_TOKEN = "7dbb5576c1b9e5b6d0d98107bfed42a5"
+import smtplib
+# from twilio.rest import Client
 
-from twilio.rest import Client
+TWILIO_SID = "ACb62dd2ce2e146d0dbd6b55d1bd204376"
+TWILIO_AUTH_TOKEN = "7dbb5576c1b9e5b6d0d98107bfed42a5"
+TWILIO_VIRTUAL_NUMBER = "+17622383481"
+TWILIO_VERIFIED_NUMBER = "+48516844216"
 
+MY_EMAIL = "karoltestemail@gmail.com"
+MY_PASSWORD = "ziyvcqtldcebitne"
 
 class NotificationManager:
+
     def __init__(self):
         pass
+        # self.client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
 
-    def sent_message(self, data):
-        client = Client(ACCOUNT_SID, AUTH_TOKEN)
-        price = data['price']
-        departure_city_name = data['cityFrom']
-        departure_iata_code = data['flyFrom']
-        arrival_city_name = data['cityTo']
-        arrival_iata_code = data['flyTo']
-        outbound_date = data['local_departure'].split("T")
-        inbound_date = data['local_arrival'].split("T")
-        msg = f"Low price alert! Only £{price} to fly from {departure_city_name}-{departure_iata_code} to {arrival_city_name}-{arrival_iata_code}, from {outbound_date[0]} to {inbound_date[0]}."
-        print(msg)
-        # message = client.messages.create(
-        #     body=msg,
-        #     from_='+17622383481',
-        #     to='+48516844216'
+    def send_sms(self, message):
+        print(message)
+        # message = self.client.messages.create(
+        #     body=message,
+        #     from_=TWILIO_VIRTUAL_NUMBER,
+        #     to=TWILIO_VERIFIED_NUMBER,
         # )
-        # print(message.status)
+        # Prints if successfully sent.
+        # print(message.sid)
+
+    def send_email(self, message, user):
+        with smtplib.SMTP("smtp.gmail.com") as connection:
+            connection.starttls()
+            connection.login(user=MY_EMAIL, password=MY_PASSWORD)
+            connection.sendmail(from_addr=MY_EMAIL,
+                                to_addrs=user["email"],
+                                msg=f"Subject: Hello {user['firstName']} {user['lastName']}\n\n{message}".encode("utf-8"))

@@ -1,4 +1,4 @@
-# TODO: 1. Create a coffee machine
+
 MENU = {
     "espresso": {
         "ingredients": {
@@ -69,19 +69,15 @@ should_be_working = True
 money = 0
 while should_be_working:
 
-    # TODO: 2. Prompt user by asking “What would you like? (espresso/latte/cappuccino):”
     user_order = input("What would you like? (espresso/latte/cappuccino):")
 
-    # TODO: 3. Turn off the Coffee Machine by entering “off” to the prompt
     if user_order == "off":
         should_be_working = False
-    # TODO: 4. Print report
     elif user_order == "report":
         print(f"Water: {resources['water']}ml")
         print(f"Milk: {resources['milk']}ml")
         print(f"Coffee: {resources['coffee']}g")
         print(f"Money: ${money}")
-    # TODO: 9. Make a refill procedure
     elif user_order == "refill":
         resources['water'] += int(input("How much water do you refill?: "))
         resources['milk'] += int(input("How much milk do you refill?: "))
@@ -90,13 +86,11 @@ while should_be_working:
         money = 0
 
     elif user_order == 'espresso' or user_order == 'latte' or user_order == 'cappuccino':
-        # TODO: 5. Check resources sufficient
         if check_resources(user_ordered=user_order):
-            # TODO: 6. Process coins.
 
             if coins_operator(user_ordered=user_order):
                 resources_needed = MENU[user_order]['ingredients']
-                # TODO: 8. Make Coffee ☕☕☕
+
                 for key in resources_needed:
                     resources[key] -= resources_needed[key]
                 money += MENU[user_order]['cost']

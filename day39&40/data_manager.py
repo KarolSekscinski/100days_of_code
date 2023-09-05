@@ -1,38 +1,43 @@
+from pprint import pprint
 import requests
 
-SHEETY_ENDPOINT = "https://api.sheety.co/220463ab263c7c42fd4fbaad8577ec39/flightFinder/prices"
+SHEETY_PRICES_ENDPOINT = "https://api.sheety.co/220463ab263c7c42fd4fbaad8577ec39/flightFinder/prices"
+SHEETY_USERS_ENDPOINT = "https://api.sheety.co/220463ab263c7c42fd4fbaad8577ec39/flightFinder/users"
 TOKEN = "Bearer LSDKANDASHGDUIAlansdasndasdasdasdnmxczbgi"
 HEADERS = {
     "Authorization": TOKEN
 }
+
 class DataManager:
+
     def __init__(self):
-        # self.sheety_endpoint = "https://api.sheety.co/220463ab263c7c42fd4fbaad8577ec39/flightFinder/prices"
-        # self.token = "Bearer LSDKANDASHGDUIAlansdasndasdasdasdnmxczbgi"
-        self.response = None
-        self.prices = None
+        self.destination_data = {}
+        self.users = {}
 
-    def return_prices(self):
-        self.response = requests.get(url=SHEETY_ENDPOINT, headers=HEADERS)
-        self.prices = self.response.json()["prices"]
-        return self.prices
+    def get_destination_data(self):
+        response = requests.get(url=SHEETY_PRICES_ENDPOINT, headers=HEADERS)
+        data = response.json()
+        self.destination_data = data["prices"]
+        return self.destination_data
 
-    def update_iatacode(self, row_data):
-        row_id = row_data["id"]
-        request_body = {
-            "price": {
-                "iataCode": row_data["iataCode"],
+    def update_destination_codes(self):
+        for city in self.destination_data:
+            new_data = {
+                "price": {
+                    "iataCode": city["iataCode"]
+                }
             }
-        }
-        self.response = requests.put(url=f"{SHEETY_ENDPOINT}/{row_id}", headers=HEADERS, json=request_body)
-        print(self.response.text)
+            response = requests.put(
+                url=f"{SHEETY_PRICES_ENDPOINT}/{city['id']}",
+                json=new_data,
+                headers=HEADERS
 
+            )
+            print(response.text)
 
-
-
-
-
-
-
-
+    def get_active_users(self):
+        response = requests.get(url=SHEETY_USERS_ENDPOINT, headers=HEADERS)
+        data = response.json()
+        self.users = data["users"]
+        return self.users
 
