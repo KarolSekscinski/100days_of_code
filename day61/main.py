@@ -1,16 +1,57 @@
-# This is a sample Python script.
+from flask import Flask, render_template
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import DataRequired, Length, ValidationError
+from flask_bootstrap import Bootstrap5
+'''
+Red underlines? Install the required packages first: 
+Open the Terminal in PyCharm (bottom left). 
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+On Windows type:
+python -m pip install -r requirements.txt
+
+On MacOS type:
+pip3 install -r requirements.txt
+
+This will install the packages from requirements.txt for this project.
+'''
+
+def is_email(form, field):
+    if "@" not in field.data and "." not in field.data:
+        raise ValidationError('Email must contain . and @')
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+class MyForm(FlaskForm):
+    email = StringField(label='Email', validators=[DataRequired(), is_email])
+    password = PasswordField(label='Password', validators=[DataRequired(), Length(min=8)])
+    submit = SubmitField(label="Log In")
 
 
-# Press the green button in the gutter to run the script.
+app = Flask(__name__)
+bootstrap = Bootstrap5(app)
+app.secret_key = "anystringtokeepsecret"
+
+
+
+@app.route("/")
+def home():
+    return render_template('index.html')
+
+
+@app.route('/login', methods=["POST", "GET"])
+def login():
+    login_form = MyForm()
+    if login_form.validate_on_submit():
+        email = login_form.data['email']
+        password = login_form.data['password']
+        if email == "admin@email.com" and password == "12345678":
+            return render_template("success.html")
+        else:
+            return render_template("denied.html")
+
+    return render_template('login.html', form=login_form)
+
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    app.run(debug=True)
