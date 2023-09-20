@@ -110,7 +110,7 @@ def update_price(cafe_id):
 
 
 # HTTP DELETE - Delete Record
-@app.route("/report-closed/<cafe_id>", methods=["DELETE"])
+@app.route("/report-closed/<cafe_id>")
 def delete_cafe(cafe_id):
     api_key_request = request.args.get("api-key")
     cafe = db.session.get(Cafe, cafe_id)
