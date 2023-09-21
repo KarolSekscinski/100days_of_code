@@ -4,8 +4,8 @@ import datetime as dt
 import random as r
 import pandas as pd
 
-MY_EMAIL = "karoltestemail@gmail.com"
-MY_PASSWORD = "ziyvcqtldcebitne"
+MY_EMAIL = "YOUR EMAIL"
+MY_PASSWORD = "YOUR PASSWORD"
 
 
 data = pd.read_csv("birthdays.csv")

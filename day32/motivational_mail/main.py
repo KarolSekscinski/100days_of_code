@@ -2,10 +2,10 @@ import smtplib
 import datetime as dt
 import random as r
 
-my_email = "karoltestemail@gmail.com"
-my_password = "ziyvcqtldcebitne"
-other_password = "kfrrrmguqxluaytg"
-second_email = "testkarolemail@gmail.com"
+my_email = "YOUR EMAIL"
+my_password = "YOUR PASSWORD"
+other_password = "YOUR PASSWORD"
+second_email = "YOUR EMAIL"
 
 
 if dt.datetime.now().weekday() == 4:
@@ -19,11 +19,6 @@ if dt.datetime.now().weekday() == 4:
                             to_addrs=second_email,
                             msg=message)
 
-# with smtplib.SMTP("smtp.gmail.com") as connection:
-#     connection.starttls()
-#     connection.login(user=second_email, password=other_password)
-#     connection.sendmail(from_addr=second_email,
-#                         to_addrs=my_email,
-#                         msg="Subject:Hello there\n\nHello world")
+
 
 

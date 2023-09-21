@@ -26,10 +26,8 @@ class Cafe(db.Model):
     coffee_price = db.Column(db.String(250), nullable=True)
 
     def to_dict(self):
-        dictionary = { column.name: getattr(self, column.name) for column in self.__table__.columns}
-        # dictionary = {}
-        # for column in self.__table__.columns:
-        #     dictionary[column.name] = getattr(self, column.name)
+        dictionary = {column.name: getattr(self, column.name) for column in self.__table__.columns}
+
         return dictionary
 
 
@@ -90,6 +88,7 @@ def add():
     return jsonify(response={
         "Success": "Successfully added the new cafe"
     })
+
 
 # HTTP PUT/PATCH - Update Record
 @app.route("/update-price/<cafe_id>", methods=["PATCH"])

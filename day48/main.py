@@ -23,14 +23,3 @@ print(events)
 
 
 
-
-
-
-
-
-# driver.get("https://sprzedajemy.pl/drukarka-laserowa-lexmark-4062-41a-mono-pszczyna-2-0010c9-nr66152662")
-#
-# price_cents = driver.find_element(By.XPATH, value='//*[@id="offerDetailsAdditional"]/div[1]/div/strong/span')
-# print(price_cents.text)
-# driver.quit()
-

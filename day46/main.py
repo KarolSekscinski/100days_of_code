@@ -4,8 +4,8 @@ from spotipy.oauth2 import SpotifyOAuth
 import spotipy
 
 
-CLIENT_ID = "44ed6f8c7c284516b6a9435c140d8812"
-CLIENT_SECRET = "169c5fc17f2e4bd3acd71d904faf66bd"
+CLIENT_ID = "YOUR CLIENT_ID"
+CLIENT_SECRET = "YOUR CLIENT_SECRET"
 
 URL = "https://www.billboard.com/charts/hot-100/"
 
@@ -27,7 +27,7 @@ sp = spotipy.Spotify(
         client_secret=CLIENT_SECRET,
         show_dialog=True,
         cache_path="token.txt",
-        username="jlqj5nqestxy2ck7cnubwn5i4",
+        username="YOUR USERNAME",
     )
 )
 

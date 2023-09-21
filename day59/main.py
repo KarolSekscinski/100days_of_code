@@ -2,8 +2,8 @@ from flask import Flask, render_template, request
 import requests
 import smtplib
 
-my_email = "karoltestemail@gmail.com"
-my_password = "ziyvcqtldcebitne"
+my_email = "YOUR EMAIL"
+my_password = "YOUR PASSWORD"
 URL = "https://api.npoint.io/eb6cd8a5d783f501ee7d"
 
 app = Flask(__name__)

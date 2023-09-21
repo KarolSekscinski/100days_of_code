@@ -2,8 +2,8 @@ from InternetSpeedTwitterBot import InternetSpeedTwitterBot
 
 PROMISED_DOWN = 100
 PROMISED_UP = 30
-TWITTER_EMAIL = "KComplain28815"
-TWITTER_PASSWORD = "u#D6w,/i#U:6-an"
+TWITTER_EMAIL = "YOUR TWITTER EMAIL"
+TWITTER_PASSWORD = "YOUR TWITTER PASSWORD"
 URL = "https://twitter.com"
 SPEED_TEST_URL = "https://www.speedtest.pl/"
 

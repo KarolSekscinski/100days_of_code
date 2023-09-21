@@ -10,14 +10,7 @@ exercise_endpoint = os.environ["exercise_endpoint"]
 token = os.environ["token"]
 
 sheety_endpoint = os.environ["sheety_endpoint"]
-# APP_ID = "ba6d209c"
-# API_KEY = "7a75745a57db1bf2257b963e4cc2b8ce"
-#
-#
-# exercise_endpoint = "https://trackapi.nutritionix.com/v2/natural/exercise"
-# token = "Bearer SAJDONASKDANSLDNaohsdoasndaskd"
-#
-# sheety_endpoint = "https://api.sheety.co/220463ab263c7c42fd4fbaad8577ec39/workingTracking/workouts"
+
 GENDER = "male"
 WEIGHT_KG = 77.0
 HEIGHT = 180.0

@@ -1,8 +1,8 @@
 import requests
 import datetime as dt
 PIXELA_ENDPOINT = "https://pixe.la/v1/users"
-username = "karols"
-token = "ajndjkashndhaasdjk"
+username = "YOUR USERNAME"
+token = "YOUR TOKEN"
 
 #USER
 user_params = {

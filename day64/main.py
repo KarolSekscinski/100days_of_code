@@ -9,8 +9,8 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String, Float
 
 URL = "https://api.themoviedb.org/3/search/movie"
-API_KEY = "51b854ec46cfc48c219efbc8dac3c9ae"
-TOKEN = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MWI4NTRlYzQ2Y2ZjNDhjMjE5ZWZiYzhkYWMzYzlhZSIsInN1YiI6IjY1MDhhZTljZmEyN2Y0MDBjYWE1MjlmMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OqxlMidV76HHZkzMH0ZZsMnS6NAqOL7qdzoz0LFk0Rw"
+API_KEY = "YOUR API KEY"
+TOKEN = "YOUR TOKEN"
 URL_DETAILS = "https://api.themoviedb.org/3/movie"
 URL_IMAGE = "https://image.tmdb.org/t/p/w400"
 headers = {

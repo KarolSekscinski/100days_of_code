@@ -3,11 +3,11 @@ from datetime import datetime
 import time
 import smtplib
 
-MY_LAT = 53.096519
-MY_LONG = 23.118393
+MY_LAT = 0
+MY_LONG = 0
 
-MY_EMAIL = "karoltestemail@gmail.com"
-MY_PASSWORD = "ziyvcqtldcebitne"
+MY_EMAIL = "YOUR EMAIL"
+MY_PASSWORD = "YOUR PASSWORD"
 
 
 def is_iss_close():
@@ -57,10 +57,7 @@ while True:
     else:
         print("Naah ISS isn't near...")
     time.sleep(60)
-# If the ISS is close to my current position
-# and it is currently dark
-# Then send me an email to tell me to look up.
-# BONUS: run the code every 60 seconds.
+
 
 
 

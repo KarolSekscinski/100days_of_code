@@ -1,9 +1,9 @@
 from pprint import pprint
 import requests
 
-SHEETY_PRICES_ENDPOINT = "https://api.sheety.co/220463ab263c7c42fd4fbaad8577ec39/flightFinder/prices"
-SHEETY_USERS_ENDPOINT = "https://api.sheety.co/220463ab263c7c42fd4fbaad8577ec39/flightFinder/users"
-TOKEN = "Bearer LSDKANDASHGDUIAlansdasndasdasdasdnmxczbgi"
+SHEETY_PRICES_ENDPOINT = "YOUR ENDPOINT"
+SHEETY_USERS_ENDPOINT = "YOUR ENDPOINT"
+TOKEN = "YOUR TOKEN"
 HEADERS = {
     "Authorization": TOKEN
 }

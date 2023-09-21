@@ -1,19 +1,20 @@
 import smtplib
 # from twilio.rest import Client
 
-TWILIO_SID = "ACb62dd2ce2e146d0dbd6b55d1bd204376"
-TWILIO_AUTH_TOKEN = "7dbb5576c1b9e5b6d0d98107bfed42a5"
-TWILIO_VIRTUAL_NUMBER = "+17622383481"
-TWILIO_VERIFIED_NUMBER = "+48516844216"
+TWILIO_SID = "YOUR TWILIO SID"
+TWILIO_AUTH_TOKEN = "YOUR TWILIO AUTH TOKEN"
+TWILIO_VIRTUAL_NUMBER = "+YOUR TWILIO NUMBER"
+TWILIO_VERIFIED_NUMBER = "+YOUR NUMBER"
 
-MY_EMAIL = "karoltestemail@gmail.com"
-MY_PASSWORD = "ziyvcqtldcebitne"
+MY_EMAIL = "YOUR EMAIL"
+MY_PASSWORD = "YOUR PASSWORD"
 
 class NotificationManager:
 
     def __init__(self):
-        pass
         # self.client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
+        pass
+
 
     def send_sms(self, message):
         print(message)

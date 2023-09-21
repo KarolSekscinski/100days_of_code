@@ -2,8 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
-TWITTER_EMAIL = "KComplain28815"
-TWITTER_PASSWORD = "u#D6w,/i#U:6-an"
+TWITTER_EMAIL = "YOUR TWITTER EMAIL"
+TWITTER_PASSWORD = "YOUR TWITTER PASSWORD"
 URL = "https://twitter.com"
 
 
@@ -16,6 +16,7 @@ class InternetSpeedTwitterBot:
         self.down = down
         self.test_up = 0
         self.test_down = 0
+
 
     def create_driver(self):
         chrome_options = webdriver.ChromeOptions()
